@@ -1,0 +1,41 @@
+<html>
+<head>
+  <style>
+    body {background-color:{{bg_color}};}
+  </style>
+</head>
+<body>
+<center>    
+<h1>Wellcom To Weather API</h1>
+<h3>color is: {{bg_color}}</h3>
+<form method="post">
+ 
+          
+<div class="InputTitle">enter address in the world:</div>
+<label>{{message}}</lable>
+
+<p><input type = "text" name = "City" /></p>
+
+<p><input type = "submit" value = "Submit" /></p>
+
+ <h3>{{address}}</h3>
+ <br>
+ <div class="Data">
+{% for item in data %}
+    <div>date: {{item["date"]}}</div>
+    <div>min temp: {{item["temp_max_c"]}}</div>
+    <div>max temp: {{item["temp_min_c"]}}</div>
+    <div>min homid: {{item["humid_min_pct"]}}</div>
+    <div>max homid: {{item["humid_max_pct"]}}</div>
+    <br>
+{% endfor %}
+</div>
+</form>
+<div>
+ <button>
+ <a href="{{ url_for('history')}}">history page</a>
+ </button>
+</div>
+</center>     
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+ <h3>history</h3>
+  <div class="DataHistory">
+{% for item in list_history %}
+    <a href="{{ url_for('download', filename=item) }}">{{item}}</a>
+    <br>
+{% endfor %}
+</div>
+</body>
+
+</html>
