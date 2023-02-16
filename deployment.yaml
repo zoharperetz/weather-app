@@ -19,10 +19,7 @@ spec:
         - containerPort: 5000
         env:
         - name: TAG 
-          valueFrom:
-            configMapKeyRef:
-              name: image-configmap
-              key: image_tag
+          value: "cf3c1bc188817ccabff747048e32cf7ca3efc2f8-28"
 
 ---
 apiVersion: v1
