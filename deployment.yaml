@@ -14,15 +14,13 @@ spec:
     spec:
       containers:
       - name: weatherapp
-        image: ${image}
+        image: 872444258103.dkr.ecr.us-east-1.amazonaws.com/weatherapp:${image_tag}
         ports:
         - containerPort: 5000
-        env:
-        - name: image
-          valueFrom:
-            configMapKeyRef:
-              name: image-configmap
-              key: image
+        envFrom:
+           - configMapRef:
+               name: image-configmap
+
 ---
 apiVersion: v1
 kind: Service
